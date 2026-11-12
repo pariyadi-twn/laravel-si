@@ -1,0 +1,10 @@
+<?php
+// [P01] Konfigurasi lingkungan aplikasi.
+return [
+ 'default' => env('CACHE_STORE', 'file'),
+ 'stores' => [
+  'file' => ['driver' => 'file', 'path' => storage_path('framework/cache/data'), 'lock_path' => storage_path('framework/cache/data')],
+  'array' => ['driver' => 'array'],
+ ],
+ 'prefix' => env('CACHE_PREFIX', 'laravel_si_cache_'),
+];

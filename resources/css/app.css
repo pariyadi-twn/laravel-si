@@ -1,0 +1,8 @@
+/* [P03] Bootstrap responsif + tambahan tata letak untuk mahasiswa pemula. */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+body { background: #f5f7fb; }
+.main-container { max-width: 1140px; }
+.page-heading { font-weight: 720; letter-spacing: -0.02em; }
+.card { box-shadow: 0 2px 14px rgba(0,0,0,.035); border:1px solid #e9edf3; }
+code { color: #a14a56; }
+.thumbnail { width: 86px; height: 74px; object-fit: cover; border-radius: 9px; }

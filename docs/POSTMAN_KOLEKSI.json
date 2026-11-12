@@ -1,0 +1,108 @@
+{
+  "info": {
+    "name": "Laravel SI P11-P12 REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Jangan ekspor token asli; isi variable token di environment lokal."
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "token",
+      "value": "ISI_TOKEN_PRIBADI_DI_POSTMAN"
+    }
+  ],
+  "item": [
+    {
+      "name": "P11 Login API",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/login",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"admin@laravel-si.test\",\"password\":\"Password123!\",\"device_name\":\"postman\"}"
+        }
+      }
+    },
+    {
+      "name": "P11 List Program Studi",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/program-studi"
+      }
+    },
+    {
+      "name": "P11 List Mahasiswa",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/mahasiswa"
+      }
+    },
+    {
+      "name": "P12 API Referensi Posts",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/referensi-posts?user_id=1"
+      }
+    },
+    {
+      "name": "P11 Logout API",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{base_url}}/api/v1/logout"
+      }
+    }
+  ]
+}
